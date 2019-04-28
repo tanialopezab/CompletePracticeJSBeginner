@@ -6,7 +6,7 @@ const checkVerifyElement = document.getElementById('checkVerify');
 const saveButtonElement = document.querySelector('.button__save');
 const showUsersButtonElement = document.querySelector('.button__show-users');
 const listUsersInfo = document.querySelector('.list__users-info');
-const userInfoArr = [];
+const userInfoArr = [];///ARRAY VACIO
 
 ///PARTE1
 
@@ -20,6 +20,10 @@ function getInforFromForm() {
     userInfoArr.push(infoUser);
 
     console.log(userInfoArr);
+    //PARTE 4 LOCAL STORAGE persistencia en caché
+
+    localStorage.setItem('info', JSON.stringify(userInfoArr));
+    //manda este ítem o datox  a la cache llamalo 'info' y su contenido será igual a userInfoArr stringificado en JSON
 
   }
 }
@@ -59,7 +63,9 @@ function showListUsers() {
     listUsersInfo.appendChild(newUserListEl);
 
   }
-
 }
 
+
 showUsersButtonElement.addEventListener('click', showListUsers);
+
+
