@@ -1,13 +1,47 @@
 @import 'core/settings';
 
 body {
-
+	margin: 0;
+	padding: 0;
 	height: 100vh;
+	
 }
-
-form__container{
-	display: flex;
+.main__page{
+	display:flex;
 	flex-direction: column;
 	justify-items: center;
-	text-align: center;
+	margin: 80px;
 }
+
+.form__container{
+	height: 50vh;
+	width: 50vw;
+	display: inline;
+	display: flex;
+	text-align: start;
+	display: grid;
+	grid-template-columns: 1fr ;
+	grid-template-rows: 1fr 1fr 2fr 1fr 1fr 1fr;
+}
+.form__main-title{
+	text-align: center;
+	grid-column: 1 / 1;
+	grid-row: 1 / 2;
+}
+.text__name{
+	margin: 20px 20px 0 20px;
+	display: inline;
+	grid-column: 1 / 1;
+	grid-row: 2 / 3;
+}
+
+#insertName{
+	margin: 20px;
+	display: inline;
+	height:18px;
+	width: 80px;
+}
+text_accept{
+
+}
+
