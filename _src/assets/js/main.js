@@ -4,12 +4,14 @@ const inputNameElement = document.getElementById('insertName');
 const inputEmailElement = document.getElementById('insertEmail');
 const checkVerifyElement = document.getElementById('checkVerify');
 const saveButtonElement = document.querySelector('.button__save');
+const showUsersButtonElement = document.querySelector('.button__show-users');
+const listUsersInfo = document.querySelector('.list__users-info');
 const userInfoArr = [];
 
-
+///PARTE1
 
 function getInforFromForm() {
-  const infoUser = {};// está aqui porque la variable que contiene ese objeto NO PUEDE SER GLOBAL Se crea una nueva y se destruye cada vez que se ejecute la función.
+  const infoUser = {};// está aquí porque la variable que contiene ese objeto NO PUEDE SER GLOBAL Se crea una nueva y se destruye cada vez que se ejecute la función. nuevo/'borra'/nuevo/borra
   if (inputNameElement.value !== '') {
     infoUser.name = inputNameElement.value;
     infoUser.confirm = checkVerifyElement.checked;
@@ -22,6 +24,42 @@ function getInforFromForm() {
   }
 }
 
-
 saveButtonElement.addEventListener('click', getInforFromForm);
 
+//PARTE 2
+
+function showListUsers() {
+  let namesList;///DECLARO las variables que contendran la información solicitada FUERA del Bucle
+  let checkList;
+  let emailList;
+  let newLiContent;// contenido de LI nuevo que voy a crear
+
+  listUsersInfo.innerHTML = ''; // pone el contenido del UL a cero cada vez que se introduce un dato nuevo
+
+  for (let i = 0; i < userInfoArr.length; i++) {//RELLENO las VARIABLES DENTRO DEL BUCLE CON EL RECORRIDO
+    namesList = userInfoArr[i].name;
+    checkList = userInfoArr[i].confirm;
+    emailList = userInfoArr[i].email;
+
+    //Crear el elemento nuevo
+    const newUserListEl = document.createElement('li');
+
+    //Inserto el contenido dependiendo de las condiciones que se cumplen excepto el NOMBRE que se introduce SIEMPRE
+
+    if (checkList === true) {
+      newLiContent = document.createTextNode(namesList + ' ' + emailList);//COMPONER UN STRING
+    }
+    else {
+      newLiContent = document.createTextNode(namesList);
+    }
+
+    ///AL LI LE PONGO EL CONTENIDO
+    newUserListEl.appendChild(newLiContent);
+    ///AL UL LE INSERTO EL LI
+    listUsersInfo.appendChild(newUserListEl);
+
+  }
+
+}
+
+showUsersButtonElement.addEventListener('click', showListUsers);
