@@ -6,7 +6,19 @@ const checkVerifyElement = document.getElementById('checkVerify');
 const saveButtonElement = document.querySelector('.button__save');
 const showUsersButtonElement = document.querySelector('.button__show-users');
 const listUsersInfo = document.querySelector('.list__users-info');
-const userInfoArr = [];///ARRAY VACIO
+let userInfoArr = [];///ARRAY VACIO
+
+//PARTE 4 LOCAL STORAGE recuperar al recargar la página
+
+//esta línea solo se ejecutaría si habría datos guardados con anterioridad.
+//añadimis un if para comprobar si habia datos en LS  o estaba null
+// Queremos rellenar userinfoarr que en inicio es un array vacío
+//queremos reoger los datos de LS SOLO SI son distintos de NULL(no habia nada)  es decir, que había algo
+//s una rray es null, no podemos interactuar con el no se puede medir su longitud, nu pusherar nada ni nada de nada 
+if( localStorage.getItem('info') !== null){
+  userInfoArr = JSON.parse(localStorage.getItem('info'));
+}
+
 
 ///PARTE1
 
@@ -20,10 +32,11 @@ function getInforFromForm() {
     userInfoArr.push(infoUser);
 
     console.log(userInfoArr);
-    //PARTE 4 LOCAL STORAGE persistencia en caché
 
+    //PARTE 4 LOCAL STORAGE persistencia en caché
     localStorage.setItem('info', JSON.stringify(userInfoArr));
-    //manda este ítem o datox  a la cache llamalo 'info' y su contenido será igual a userInfoArr stringificado en JSON
+
+    //manda este ítem o datox  a la cache llamalo 'info' identificador y su contenido será igual a userInfoArr stringificado en JSON
 
   }
 }
@@ -67,5 +80,3 @@ function showListUsers() {
 
 
 showUsersButtonElement.addEventListener('click', showListUsers);
-
-
