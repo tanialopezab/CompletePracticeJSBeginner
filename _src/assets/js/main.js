@@ -5,6 +5,7 @@ const inputEmailElement = document.getElementById('insertEmail');
 const checkVerifyElement = document.getElementById('checkVerify');
 const saveButtonElement = document.querySelector('.button__save');
 const showUsersButtonElement = document.querySelector('.button__show-users');
+const resetButtonElement = document.querySelector('.button__reset');
 const listUsersInfo = document.querySelector('.list__users-info');
 let userInfoArr = [];///ARRAY VACIO
 
@@ -15,7 +16,7 @@ let userInfoArr = [];///ARRAY VACIO
 // Queremos rellenar userinfoarr que en inicio es un array vacío
 //queremos reoger los datos de LS SOLO SI son distintos de NULL(no habia nada)  es decir, que había algo
 //s una rray es null, no podemos interactuar con el no se puede medir su longitud, nu pusherar nada ni nada de nada 
-if( localStorage.getItem('info') !== null){
+if (localStorage.getItem('info') !== null) {
   userInfoArr = JSON.parse(localStorage.getItem('info'));
 }
 
@@ -80,3 +81,13 @@ function showListUsers() {
 
 
 showUsersButtonElement.addEventListener('click', showListUsers);
+
+//PARTE 5 añadir un botón que elimine la información de la caché al ser pulsado
+
+function resetLocalStorage() {
+  localStorage.removeItem('info');
+
+}
+
+
+resetButtonElement.addEventListener('click', resetLocalStorage);
