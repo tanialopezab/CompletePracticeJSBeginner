@@ -13,3 +13,12 @@ Un botón para guardar la información.
 
 Cada vez que se pulse el botón guardar, se almacenará la información en un array.
 Realizar una comprobación del resultado por consola.
+
+
+PARTE 2
+
+Añade un nuevo boton : mostrar usuarios
+
+Al pulsar en el boton la página debe mostrar una lista con el nombre de usuario SIEMPRE
+solo deberá mostrar el correo si han seleccionado el check de recibir correo
+No se podrá usar .innerHTML para añadir elementos a la lista ul
