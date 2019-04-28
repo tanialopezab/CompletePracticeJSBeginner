@@ -4,7 +4,6 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-	
 }
 .main__page{
 	display:flex;
@@ -24,11 +23,15 @@ body {
 	grid-template-rows: 1fr 1fr 2fr 1fr 1fr 1fr;
 }
 .form__main-title{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: oblique;
+	font-weight: bolder;
+	color: blueviolet;
 	text-align: center;
 	grid-column: 1 / 1;
 	grid-row: 1 / 2;
 }
-.text__name{
+.text__insert-name{
 	margin: 20px 20px 0 20px;
 	display: inline;
 	grid-column: 1 / 1;
@@ -36,12 +39,86 @@ body {
 }
 
 #insertName{
-	margin: 20px;
+	margin: 50px 20px 0 20px;
 	display: inline;
 	height:18px;
+	width: 100px;
+	border-bottom-color: blueviolet;
+	border-radius: 6px;
+	grid-column: 1 / 1;
+	grid-row: 2 / 3;
+	&:focus{
+		border: 3px solid blue;
+	}
+}
+.text_accept{
+	margin: 20px 20px 0 20px;
+	display: inline;
+}
+
+#checkVerify{
+	margin: 20px 20px 0 20px;
+	display: inline;
+	width: 25px;
+	height: 25px;
+	grid-column: 1 / 1;
+	grid-row: 4 / 5;
+	&:focus{
+		border: 3px solid blue;
+	}
+}
+
+.text__insert-email{
+	margin: 20px 20px 0 20px;
+	display: inline;
+	grid-column: 1 / 1;
+	grid-row: 5 / 6;
+}
+
+.input__email{
+	margin: 20px;
+	height:18px;
+	width: 350px;
+	border-bottom-color: blueviolet;
+	border-radius: 6px;
+	grid-column: 1 / 1;
+	grid-row: 5 / 6;
+	&:focus{
+		border: 3px solid blue;
+	}
+}
+
+.button{
+	display: inline;
+	margin:20px;
+	text-decoration: none;	
+	color: blueviolet;
+	display: inline;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	padding-right: 15px;
 	width: 80px;
-}
-text_accept{
+	border: 1px solir violet;
+	grid-column: 1 / 1;
+	grid-row: 6 / 7;
+	&:hover{
+		background-color: darkblue;
+		color: blanchedalmond;
+		font-weight: 900;
+	}
 
 }
 
+.btn-show-users{
+	margin-left: 200px;
+}
+.btn-reset{
+	margin-left: 400px;
+}
+
+.user__item{
+
+	list-style: square blueviolet;
+}

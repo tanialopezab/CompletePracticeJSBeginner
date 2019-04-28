@@ -3,9 +3,9 @@
 const inputNameElement = document.getElementById('insertName');
 const inputEmailElement = document.getElementById('insertEmail');
 const checkVerifyElement = document.getElementById('checkVerify');
-const saveButtonElement = document.querySelector('.button__save');
-const showUsersButtonElement = document.querySelector('.button__show-users');
-const resetButtonElement = document.querySelector('.button__reset');
+const saveButtonElement = document.querySelector('.btn-save');
+const showUsersButtonElement = document.querySelector('.btn-show-users');
+const resetButtonElement = document.querySelector('.btn-reset');
 const listUsersInfo = document.querySelector('.list__users-info');
 let userInfoArr = [];///ARRAY VACIO
 
@@ -73,8 +73,11 @@ function showListUsers() {
 
     ///AL LI LE PONGO EL CONTENIDO
     newUserListEl.appendChild(newLiContent);
+
     ///AL UL LE INSERTO EL LI
     listUsersInfo.appendChild(newUserListEl);
+    ///A CADA LI LE INSERTO LA MISMA LISTA
+  
 
   }
 }
@@ -86,6 +89,8 @@ showUsersButtonElement.addEventListener('click', showListUsers);
 
 function resetLocalStorage() {
   localStorage.removeItem('info');
+  inputNameElement.value = '';
+  inputEmailElement.value = '';
 
 }
 
