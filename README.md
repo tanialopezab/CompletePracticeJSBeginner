@@ -22,3 +22,11 @@ Añade un nuevo boton : mostrar usuarios
 Al pulsar en el boton la página debe mostrar una lista con el nombre de usuario SIEMPRE
 solo deberá mostrar el correo si han seleccionado el check de recibir correo
 No se podrá usar .innerHTML para añadir elementos a la lista ul
+
+PARTE 3
+
+Elmacenar los datos de los usuarios en la LocalStorage(Caché)
+
+PARTE 4 
+
+Crear un boton de borrar que elimina los usuarios de la página y del LocalStorage
