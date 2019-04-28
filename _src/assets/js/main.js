@@ -15,14 +15,13 @@ let userInfoArr = [];///ARRAY VACIO
 //añadimis un if para comprobar si habia datos en LS  o estaba null
 // Queremos rellenar userinfoarr que en inicio es un array vacío
 //queremos reoger los datos de LS SOLO SI son distintos de NULL(no habia nada)  es decir, que había algo
-//s una rray es null, no podemos interactuar con el no se puede medir su longitud, nu pusherar nada ni nada de nada 
+//s una rray es null, no podemos interactuar con el no se puede medir su longitud, nu pusherar nada ni nada de nada
 if (localStorage.getItem('info') !== null) {
   userInfoArr = JSON.parse(localStorage.getItem('info'));
 }
 
 
 ///PARTE1
-
 function getInforFromForm() {
   const infoUser = {};// está aquí porque la variable que contiene ese objeto NO PUEDE SER GLOBAL Se crea una nueva y se destruye cada vez que se ejecute la función. nuevo/'borra'/nuevo/borra
   if (inputNameElement.value !== '') {
@@ -76,8 +75,9 @@ function showListUsers() {
 
     ///AL UL LE INSERTO EL LI
     listUsersInfo.appendChild(newUserListEl);
-    ///A CADA LI LE INSERTO LA MISMA LISTA
-  
+    ///A CADA LI LE INSERTO LA MISMA CLASE
+    newUserListEl.setAttribute('class', 'user__item');
+    newUserListEl.setAttribute('tabindex', '0');
 
   }
 }
@@ -91,7 +91,6 @@ function resetLocalStorage() {
   localStorage.removeItem('info');
   inputNameElement.value = '';
   inputEmailElement.value = '';
-
 }
 
 
