@@ -29,4 +29,4 @@ Elmacenar los datos de los usuarios en la LocalStorage(Caché)
 
 PARTE 4 
 
-Crear un boton de borrar que elimina los usuarios de la página y del LocalStorage
+Crear un boton de borrar que borra el contenido del LocalStorage, borra los campos del formulario y borra la lista creada.
