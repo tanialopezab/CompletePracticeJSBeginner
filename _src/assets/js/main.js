@@ -70,12 +70,12 @@ function showListUsers() {
       newLiContent = document.createTextNode(namesList);
     }
 
-    ///AL LI LE PONGO EL CONTENIDO
+    ///element LI insert Content
     newUserListEl.appendChild(newLiContent);
 
-    ///AL UL LE INSERTO EL LI
+    ///element UL insert LI
     listUsersInfo.appendChild(newUserListEl);
-    ///A CADA LI LE INSERTO LA MISMA CLASE
+    ///each LI add Class and attribute
     newUserListEl.setAttribute('class', 'user__item');
     newUserListEl.setAttribute('tabindex', '0');
 

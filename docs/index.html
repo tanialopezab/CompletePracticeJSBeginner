@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercice Js form/localStorage</title>
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    
+    <body>
+        <div class="page">
+            <header class="page__header"></header>
+            <main class="page__main">
+                <div class="form__container">
+                     <h2 class="form__main-title">Subscribers to our newsletter</h2>
+
+                    <label class="text__insert-name" for="insertName">User Name</label>
+                    <input class="input__name" type="text" name="userName"
+                    id="insertName">
+                    <label class="text_accept" for="checkVerify">I accept receiving emails</label>
+                    <input class="input__check" type="checkbox"
+                    name="veryfySendEmail" id="checkVerify" value="checked">
+                    <label class="text__insert-email" for="insertEmail">Introduce your E-mail address</label>
+                    <input class="input__email" type="email"
+                    name="userEmail" id="insertEmail">
+                    <button class="button btn-save">SAVE</button>
+                    <button class="button btn-show-users">SHOW USERS</button>
+                    <button class="button btn-reset">RESET</button>
+                    <ul class="list__users-info"></ul>
+                </div>
+            </main>
+            <script src="assets/js/main.js"></script>
+        </div>
+    </body>
+
+</html>
