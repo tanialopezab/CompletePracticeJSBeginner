@@ -12,14 +12,13 @@ let userInfoArr = [];///ARRAY VACIO
 //PARTE 4 LOCAL STORAGE recuperar al recargar la página
 
 //esta línea solo se ejecutaría si habría datos guardados con anterioridad.
-//añadimis un if para comprobar si habia datos en LS  o estaba null
-// Queremos rellenar userinfoarr que en inicio es un array vacío
-//queremos reoger los datos de LS SOLO SI son distintos de NULL(no habia nada)  es decir, que había algo
-//s una rray es null, no podemos interactuar con el no se puede medir su longitud, nu pusherar nada ni nada de nada
+//añadimos un if para comprobar si habia datos en LS  o estaba null
+//Queremos rellenar userInfoArr que en inicio es un array vacío
+//queremos reoger los datos de LS SOLO SI son distintos de NULL(no había nada)es decir, que había algo
+//si una rray es null, no podemos interactuar con el no se puede medir su longitud, ni pusherar nada.
 if (localStorage.getItem('info') !== null) {
   userInfoArr = JSON.parse(localStorage.getItem('info'));
 }
-
 
 ///PARTE1
 function getInforFromForm() {
@@ -36,15 +35,13 @@ function getInforFromForm() {
     //PARTE 4 LOCAL STORAGE persistencia en caché
     localStorage.setItem('info', JSON.stringify(userInfoArr));
 
-    //manda este ítem o datox  a la cache llamalo 'info' identificador y su contenido será igual a userInfoArr stringificado en JSON
-
+    //manda este ítem o dato a la cache llamalo 'info' identificador y su contenido será igual a userInfoArr stringificado en JSON
   }
 }
 
 saveButtonElement.addEventListener('click', getInforFromForm);
 
 //PARTE 2
-
 function showListUsers() {
   let namesList;///DECLARO las variables que contendran la información solicitada FUERA del Bucle
   let checkList;
@@ -78,7 +75,7 @@ function showListUsers() {
     ///each LI add Class and attribute
     newUserListEl.setAttribute('class', 'user__item');
     newUserListEl.setAttribute('tabindex', '0');
-
+  
   }
 }
 
@@ -86,12 +83,19 @@ function showListUsers() {
 showUsersButtonElement.addEventListener('click', showListUsers);
 
 //PARTE 5 añadir un botón que elimine la información de la caché al ser pulsado
-
+//al ser pulsado tambien elimina el contenido de los campos
+///selecciono todos los elementos con la clase useer__item que es la perteneciente a los li 
+/////recorro todo el array de elementos creados con un li y lo elimino del DOM
 function resetLocalStorage() {
   localStorage.removeItem('info');
   inputNameElement.value = '';
   inputEmailElement.value = '';
-}
+  const liCreate =  document.querySelectorAll('.user__item');
+  for(const elementli of liCreate){
+    elementli.remove();
+  }
 
+  ///borrar el array de la local storage y ademas la lista que se crea
+}
 
 resetButtonElement.addEventListener('click', resetLocalStorage);
